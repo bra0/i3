@@ -306,8 +306,9 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
                 nc = tree_open_con(nc->parent, cwindow);
 
             /* set the urgency hint on the window if the workspace is not visible */
-            if (!workspace_is_visible(assigned_ws))
-                urgency_hint = true;
+/*             if (!workspace_is_visible(assigned_ws))
+                 urgency_hint = true; 
+*/
         } else if (cwindow->wm_desktop != NET_WM_DESKTOP_NONE &&
                    cwindow->wm_desktop != NET_WM_DESKTOP_ALL &&
                    (wm_desktop_ws = ewmh_get_workspace_by_index(cwindow->wm_desktop)) != NULL) {
